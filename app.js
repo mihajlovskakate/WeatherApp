@@ -2,10 +2,11 @@ const wrapper = document.querySelector(".wrapper"),
 inputPart = document.querySelector(".input-part"),
 inputCity = inputPart.querySelector("input"),
 weatherPart = wrapper.querySelector(".weather-part"),
-arrowBack = wrapper.querySelector("header i");
+arrowBack = wrapper.querySelector("header i"),
+navigationBtn = inputPart.querySelector("button");
 
+let api= "4827950b1bea47a6d3115157b4845ca2"
 
-let api;
 
 inputCity.addEventListener("keypress", function(e){
     if (e.key === "Enter" && inputCity.value != "") {     
@@ -15,10 +16,21 @@ inputCity.addEventListener("keypress", function(e){
        
 })
 
+navigationBtn.addEventListener("click", ()=>{
+   if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          lon = position.coords.longitude;
+          lat = position.coords.latitude;
+          api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${api}`;
+          fetchData();
+        })
+    }
+})
+
+
 
 function requestApi(city){
-    const myApi= "4827950b1bea47a6d3115157b4845ca2"
-    api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myApi}&units=metric`;
+     api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`;
     fetchData();
 }
 
