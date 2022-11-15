@@ -1,41 +1,41 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #43AFFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #43AFFC;
 }
 
-.wrapper{
+.wrapper {
 
   width: 400px;
   background: #fff;
   border-radius: 7px;
- 
+
 }
 
-.wrapper header{
-  display:flex;
+.wrapper header {
+  display: flex;
   font-size: 20px;
   font-weight: 700;
   color: #43AFFC;
-  padding:15px 40px 15px 15px;
+  padding: 15px 40px 15px 15px;
   border-bottom: 1px solid #ccc;
 }
 
-.wrapper.active header i{
+.wrapper.active header i {
   margin-left: 5px;
   font-size: 30px;
 }
 
-header i{
+header i {
   font-size: 0em;
   cursor: pointer;
   margin-right: 8px;
@@ -43,25 +43,38 @@ header i{
 
 /****************************Input Part************************/
 
-.input-part{
-margin: 20px 25px 30px;
+.input-part {
+  margin: 20px 25px 30px;
 }
 
-.input-part input{
-  height:50px;
+.input-part input {
+  height: 50px;
   width: 100%;
   text-align: center;
   font-size: 17px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  
+
 }
 
-.input-part input::placeholder{
+.input-part input::placeholder {
   color: #bfbfbf;
 }
 
-.input-part .separator{
+.input-part .search-button {
+  margin: 15px 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .input-part .search-button {
+    display: flex;
+  }
+}
+
+.input-part .separator {
   height: 1px;
   width: 100%;
   position: relative;
@@ -70,10 +83,10 @@ margin: 20px 25px 30px;
   justify-content: center;
   margin: 25px 0px;
   background: #ccc;
-
 }
 
-.separator::before{
+
+.separator::before {
   content: "or";
   color: gray;
   font-size: 18px;
@@ -82,17 +95,17 @@ margin: 20px 25px 30px;
 
 }
 
-.input-part button{
+.input-part button {
   color: #fff;
   height: 50px;
   width: 100%;
   font-size: 17px;
-  background:  #43AFFC;
+  background: #43AFFC;
   border-radius: 4px;
- border: none;
+  border: none;
 }
 
-.input-part button:hover{
+.input-part button:hover {
   background: #1d9ffc;
 }
 
@@ -100,7 +113,7 @@ margin: 20px 25px 30px;
 /*********************Weather Part*****************************/
 
 
-.wrapper .weather-part{
+.wrapper .weather-part {
   display: none;
   margin: 30px 0 0;
   align-items: center;
@@ -108,32 +121,32 @@ margin: 20px 25px 30px;
   flex-direction: column;
 }
 
-.wrapper.active .weather-part{
+.wrapper.active .weather-part {
   display: flex;
 }
 
-.wrapper.active .input-part{
+.wrapper.active .input-part {
   display: none;
 }
 
-.weather-part img{
+.weather-part img {
   max-width: 125px;
 }
 
-.weather-part .temp{
+.weather-part .temp {
   display: flex;
   font-weight: 500;
   font-size: 60px;
 }
 
-.weather-part .weather{
+.weather-part .weather {
   font-size: 30px;
   text-align: center;
   margin: 10px 0;
 }
 
 
-.weather-part .location{
+.weather-part .location {
   display: flex;
   font-weight: 500;
   font-size: 20px;
@@ -146,14 +159,14 @@ margin: 20px 25px 30px;
   margin-right: 5px;
 }
 
-.weather-part .bottom-details{
+.weather-part .bottom-details {
   display: flex;
   width: 100%;
   justify-content: space-between;
   border-top: 1px solid #ccc;
 }
 
-.weather-part .column{
+.weather-part .column {
   display: flex;
   width: 100%;
   align-items: center;
@@ -161,29 +174,30 @@ margin: 20px 25px 30px;
   padding: 15px 0;
 }
 
-.column i{
+.column i {
   color: #5DBBFF;
   font-size: 40px;
   margin-right: 5px;
 }
 
-.column.humidity{
+.column.humidity {
   border-left: 1px solid #ccc;
-  }
+}
 
-.details .temp .deg{
+.details .temp .deg {
   margin: 0;
   font-size: 17px;
   padding: 0 2px 0 1px;
-  }
+}
 
-  .details .temp, .humidity span{
-    font-size: 18px;
-    font-weight: 500;
-   
-  }
+.details .temp,
+.humidity span {
+  font-size: 18px;
+  font-weight: 500;
 
-  .details p{
-    font-size: 15px;
-    padding-top: 5px;
-  }
+}
+
+.details p {
+  font-size: 15px;
+  padding-top: 5px;
+}
