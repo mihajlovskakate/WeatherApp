@@ -13,7 +13,7 @@ let MyApi= "4827950b1bea47a6d3115157b4845ca2"
 inputCity.addEventListener("keypress", function(e){
     if (e.key === "Enter" && inputCity.value != "") {     
         e.preventDefault();
-        requestApi(cityValue);
+        requestApi(inputCity.value);
         }
        
 })
